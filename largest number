@@ -1,0 +1,9 @@
+#include<stdio.h>
+int main(){
+    int num1 , num2;
+    printf("enter two number:");
+    scanf("%d%d",&num1,num2);
+    (num1 > num2)?("%d num1 largest"):("%d num2 largest");
+    return 0;
+
+}
