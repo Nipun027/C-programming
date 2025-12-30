@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+    #include <stdio.h>
+int countDigits(int num) {
+    if (num == 0)
+        return 0;
+    return 1 + countDigits(num / 10);
+}
+
+
+int reverseNumber(int num, int digits) {
+    if (num == 0)
+        return 0;
+
+    int lastDigit = num % 10;
+    return lastDigit * pow(10, digits - 1) + reverseNumber(num / 10, digits - 1);
+}
+
+int main() {
+    int num;
+    scanf("%d", &num);
+
+
+    if (num == 0) {
+        printf("0");
+        return 0;
+    }
+
+    int digits = countDigits(num);
+    int reversed = reverseNumber(num, digits);
+
+    printf("%d", reversed);
+
+    return 0;
+}
+
