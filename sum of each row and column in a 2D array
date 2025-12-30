@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    int R, C;
+    scanf("%d %d", &R, &C);
+    int arr[R][C];
+    for(int i=0; i<R; i++){
+        for(int j=0; j<C; j++){
+            scanf("%d", &arr[i][j]);
+            
+        }
+    }
+    for(int i=0; i<R; i++){        
+        long long row_sum = 0;
+        for(int j=0; j<C; j++){
+        row_sum += arr[i][j];
+    }
+        printf("%lld\n", row_sum);
+    }
+    for(int j=0; j<C; j++){             
+        long long col_sum =0;
+        for(int i=0; i<R; i++){ 
+        col_sum += arr[i][j];
+    }
+        printf("%lld\n", col_sum);
+    }
+    return 0;
+}
