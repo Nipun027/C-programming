@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    int N, i , maximum_number, current_number;
+    scanf("%d", &N);
+    
+        scanf("%d", &maximum_number);
+    for(i=0; i<N; i++)
+    {
+        scanf("%d", &current_number);
+        if(current_number > maximum_number){
+        maximum_number = current_number;
+        }
+        
+    }
+    printf("%d", maximum_number);
+    return 0;
+}
