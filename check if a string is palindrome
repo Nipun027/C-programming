@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+        char str[1001];
+    fgets(str, sizeof(str), stdin);
+    
+    int len = strlen(str);
+    if (len > 0 && str[len-1] == '\n') str[len-1] = '\0';
+    
+    int left = 0, right = len - 1;
+    int is_palindrome = 1;
+    
+    while (left < right) {
+        while (left < right && !isalnum(str[left])) left++;
+        while (left < right && !isalnum(str[right])) right--;
+        
+        if (tolower(str[left]) != tolower(str[right])) {
+            is_palindrome = 0;
+            break;
+        }
+        left++;
+        right--;
+    }
+    
+    if (is_palindrome) {
+        printf("Palindrome\n");
+    } else {
+        printf("Not Palindrome\n");
+    }   
+    return 0;
+}
